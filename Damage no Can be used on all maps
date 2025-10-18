@@ -1,0 +1,11 @@
+-- ทำให้ตัวละครอมตะ
+local player = game.Players.LocalPlayer
+local char = script.Parent
+local humanoid = char:WaitForChild("Humanoid")
+
+-- ฟังก์ชันทำให้เลือดเต็มตลอด
+humanoid.HealthChanged:Connect(function()
+	if humanoid.Health < humanoid.MaxHealth then
+		humanoid.Health = humanoid.MaxHealth
+	end
+end)
