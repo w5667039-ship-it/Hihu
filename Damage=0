@@ -1,0 +1,10 @@
+local char = script.Parent
+local humanoid = char:WaitForChild("Humanoid")
+
+humanoid.HealthChanged:Connect(function()
+	if humanoid.Health < humanoid.MaxHealth then
+		humanoid.Health = humanoid.MaxHealth
+	end
+end)
+
+humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
